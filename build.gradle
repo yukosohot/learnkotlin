@@ -1,0 +1,110 @@
+buildscript {
+    ext.kotlin_version = '1.2.30'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+mainClassName = 'MainKt'
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'com.google.guava:guava:23.0'
+    testCompile 'junit:junit:4.12'
+}
+
+repositories {
+    jcenter()
+}
+
+def _30Days = '30 Days of Code'
+
+task day0(type:Exec, dependsOn:build) {
+    group = _30Days
+    description = "Day 0: Hello, World."
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Day0Kt'
+}
+task day1(type:Exec, dependsOn:build) {
+    group = _30Days
+    description = "Day 1: Data Types"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Day1Kt'
+}
+task day2(type:Exec, dependsOn:build) {
+    group = _30Days
+    description = "Day 2: Operators"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Day2Kt'
+}
+task day3(type:Exec, dependsOn:build) {
+    group = _30Days
+    description = "Day 3: Intro to Conditional Statements"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Day3Kt'
+}
+
+
+
+
+
+
+
+def _10Days = '10 Days of Statistics'
+
+task statday01(type:Exec, dependsOn:build) {
+    group = _10Days
+    description = "Day 0: Mean, Median, and Mode"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Statday01Kt'
+}
+task statday02(type:Exec, dependsOn:build) {
+    group = _10Days
+    description = "Day 0: Weighted Mean"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Statday02Kt'
+}
+task statday11(type:Exec, dependsOn:build) {
+    group = _10Days
+    description = "Day 1: Quartiles"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Statday11Kt'
+}
+task statday12(type:Exec, dependsOn:build) {
+    group = _10Days
+    description = "Day 1: Interquartile Range"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Statday12Kt'
+}
+task statday13(type:Exec, dependsOn:build) {
+    group = _10Days
+    description = "Day 1: Standard Deviation"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Statday13Kt'
+}
+task statday21(type:Exec, dependsOn:build) {
+    group = _10Days
+    description = "Day 2: Basic Probability"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Statday21Kt'
+}
+task statday22(type:Exec, dependsOn:build) {
+    group = _10Days
+    description = "Day 2: More Dice"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Statday22Kt'
+}
+task statday23(type:Exec, dependsOn:build) {
+    group = _10Days
+    description = "Day 2: Compound Event Probability"
+    standardInput = System.in
+    commandLine 'kotlin',  '-classpath', './build/libs/practice-kotlin.jar', 'Statday23Kt'
+}
